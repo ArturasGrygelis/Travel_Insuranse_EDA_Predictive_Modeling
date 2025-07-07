@@ -1,24 +1,24 @@
 # Travel_Insuranse_EDA_Predictive_Modeling
 Data analysis and predictive modeling of Travel insurance data which is gathered at India
-This project conducts a comprehensive exploratory data analysis (EDA) and applies predictive machine learning techniques to a travel insurance dataset. The primary goal is to identify the most significant factors that influence customers to purchase travel insurance and to develop predictive models that can effectively classify potential insurance buyers.
+This project presents a comprehensive exploratory data analysis (EDA) and predictive modeling workflow for a travel insurance dataset. The primary objective is to identify the key factors that influence customers to purchase travel insurance and to develop predictive models that classify potential buyers with high precision.
 
 📊 Project Overview
-The notebook (now converted to a .py script) is organized into the following key sections:
+The notebook/script is organized into the following core sections:
 
 1️⃣ Introduction
-Outlines the project objectives, motivations, and a high-level breakdown of the workflow.
+Outlines the project objectives and a breakdown of the analytical process.
 
 2️⃣ Data Loading & Preprocessing
-Loads the travel insurance dataset.
+Loads and cleans the travel insurance dataset.
 
-Performs initial data cleaning (dropping unnecessary columns, checking for missing values).
+Checks for missing values and describes dataset features.
 
-Describes dataset features, categorizing them as categorical, ordinal, or continuous.
+Categorizes variables into categorical, ordinal, and continuous.
 
 3️⃣ Exploratory Data Analysis (EDA)
-Visualizes the distribution of the target variable (TravelInsurance).
+Visualizes distributions of the target variable (TravelInsurance).
 
-Analyzes categorical, ordinal, and continuous features using:
+Examines relationships between predictors and the target using:
 
 Countplots
 
@@ -28,19 +28,17 @@ Pairplots
 
 Correlation matrices
 
-Examines relationships between features and the target variable to uncover trends and patterns.
-
 4️⃣ Feature Engineering
-Encodes categorical features.
+Encodes categorical variables.
 
 Normalizes continuous variables.
 
-Identifies and handles outliers.
+Converts binary features into boolean types.
 
-Creates new features where beneficial for modeling.
+Conducts minor data transformations to improve modeling readiness.
 
 5️⃣ Predictive Modeling
-Applies a suite of machine learning classification algorithms:
+Trains several machine learning classification models:
 
 Logistic Regression
 
@@ -50,7 +48,7 @@ K-Nearest Neighbors
 
 Naive Bayes
 
-Support Vector Machines (SVM)
+Support Vector Machine (SVM)
 
 Decision Tree
 
@@ -62,51 +60,66 @@ XGBoost
 
 Automated TPOT AutoML classifier
 
-Evaluates models using:
+Model evaluation was performed exclusively on macro precision scores to prioritize balanced predictive power across both classes.
 
-Accuracy
+📊 Key Findings
+By feature importance from the top-performing models, the most significant factors predicting a travel insurance purchase were:
 
-Precision
+Annual Income (most important)
 
-Recall
+Family Members and Age (alternating in importance)
 
-F1-score
+Commonly important features:
 
-Confusion Matrix
+Ever Traveled Abroad
 
-ROC-AUC
-
-6️⃣ Conclusion & Recommendations
-Summarizes findings, compares model performances, and discusses actionable insights for travel agencies to optimize insurance marketing strategies.
-
-📁 Dataset Description
-Source: TravelInsurancePrediction.csv
-Key Variables:
-
-Age
+Frequent Flyer
 
 Employment Type
 
-GraduateOrNot
+📈 Model Performance Summary
+Among all evaluated models, the four best performers based on macro precision were:
 
-AnnualIncome
+XGBoost Classifier – 0.8665 macro precision
 
-FamilyMembers
+Bagged Random Forest
 
-ChronicDiseases
+AdaBoost
 
-FrequentFlyer
+Random Forest
 
-EverTravelledAbroad
+The XGBoost Classifier achieved the highest macro precision score, accurately predicting potential travel insurance buyers 86.65% of the time.
 
-TravelInsurance (target)
+📌 Conclusion
+This data science project successfully demonstrated the value of machine learning for predicting travel insurance purchase behavior. Key takeaways:
+
+Annual income is the strongest predictor of travel insurance purchase.
+
+Other relevant factors include family size, age, prior international travel experience, frequent flyer status, and employment sector.
+
+Among tested models, XGBoost Classifier achieved the highest macro precision.
+
+📊 Business Implications
+The insights from this project offer actionable strategies for tour and travel companies:
+
+Targeted Marketing: Focus promotions on customer groups with high annual incomes, larger families, frequent flyers, and those with prior international travel.
+
+Sales Prioritization: Use the trained predictive model to identify and rank potential customers most likely to purchase travel insurance.
+
+Improved Profitability: Data-driven targeting can lead to more efficient marketing campaigns, increased insurance sales, and higher overall profitability.
+
+📈 Areas for Improvement
+Future work could further enhance the predictive power and applicability of the model by:
+
+Expanding the dataset with additional variables such as gender, which may reveal new insights.
+
+Increasing sample diversity, as the current dataset includes only customers aged 25 to 35.
+
+Advanced feature engineering techniques to better capture non-linear relationships or interactions between variables.
 
 📦 Dependencies
-The project uses the following Python libraries:
+The following Python libraries were used:
 
-bash
-Copy
-Edit
 pandas
 numpy
 matplotlib
@@ -116,31 +129,5 @@ statsmodels
 scikit-learn
 xgboost
 tpot
-📌 How to Run
-Install dependencies:
-
-bash
-Copy
-Edit
-pip install -r requirements.txt
-Execute the script or open the notebook in Jupyter.
-
-Follow through the analysis and model evaluations.
-
-📈 Results Summary
-The XGBoost and Random Forest Classifiers yielded the highest accuracy and balanced precision-recall scores.
-
-Key factors influencing travel insurance purchase include:
-
-Annual income
-
-Age
-
-Employment sector
-
-Frequency of travel
-
-Prior international travel experience
-
 📑 License
 This project is released under the MIT License.
